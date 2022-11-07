@@ -6,10 +6,8 @@ session = boto3.Session(aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECR
 dynamoDB = session.resource('dynamodb', region_name='ap-south-1')
 
 
-""""create the Table"""
-
-
 def create_table():
+    """create the Table."""
     table = dynamoDB.create_table(
         TableName='employee',
         KeySchema=[
@@ -32,10 +30,8 @@ def create_table():
     print('Table Status', table.table_status)
 
 
-""""Delete the Table"""
-
-
 def delete_table():
+    """Delete the Table."""
     table = dynamoDB.Table('employee')
     table.delete()
 

@@ -1,9 +1,5 @@
 import boto3
-import creds
-ACCESS_KEY = creds.Access_Key
-SECRET_KEY = creds.Secret_Key
-session = boto3.Session(aws_access_key_id=ACCESS_KEY, aws_secret_access_key=SECRET_KEY)
-dynamoDB = session.resource('dynamodb', region_name='ap-south-1')
+dynamoDB = boto3.resource('dynamodb', region_name='ap-south-1')
 
 
 def create_table():
